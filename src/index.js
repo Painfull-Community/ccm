@@ -53,8 +53,14 @@ function save(moduleName) {
 		fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(localConfig, null, 4))
 	}
 }
-
+ // how do we test it
+ // hmm
+ // maybe we can test it with a test bot
+ // brand new idea
+ // and this module can contain
+ // a test command
 module.exports = {
-	api: {initAPIs, save},
-	config
+	api: {save},
+	config,
+	initAPIs
 }

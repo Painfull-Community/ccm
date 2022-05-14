@@ -6,5 +6,9 @@
     "min_pain_version": "1.0.0",
     "apis": {
         "ccm": "src/index.js"
-    }
+    },
+    "entrypoints": {
+        "ccmtest": "src/testcommand.js"
+    },
+    "locals": "src/locals.json"
 }
