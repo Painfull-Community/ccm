@@ -29,8 +29,9 @@ function initAPIs(util) {
 
 	let localConfig
 	if (!remoteMode) {
-		if (!fs.existsSync(`${__dirname}/config.json`)) fs.writeFileSync(`${__dirname}/config.json`, "{}")
-		localConfig = fs.readFileSync(`${__dirname}/config.json`) 
+		if (!fs.existsSync(`${__dirname}/ccm.json`)) fs.writeFileSync(`${__dirname}/ccm.json`, "{}")
+		localConfig = fs.readFileSync(`${__dirname}/ccm.json`) 
+		console.log("c: " + JSON.stringify(localConfig))
 	}
 
 	botConfig.enabledModules.forEach(module => {
@@ -40,7 +41,7 @@ function initAPIs(util) {
 			} else {
 				config[module] = {}
 				localConfig[module] = {}
-				fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(localConfig, null, 4))
+				fs.writeFileSync(`${__dirname}/ccm.json`, JSON.stringify(localConfig, null, 4))
 			}
 		}
 	})
@@ -48,9 +49,9 @@ function initAPIs(util) {
 
 function save(moduleName) {
 	if (!remoteMode) {
-		let localConfig = fs.readFileSync(`${__dirname}/config.json`) 
+		let localConfig = fs.readFileSync(`${__dirname}/ccm.json`) 
 		localConfig[moduleName] = config[moduleName]
-		fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(localConfig, null, 4))
+		fs.writeFileSync(`${__dirname}/ccm.json`, JSON.stringify(localConfig, null, 4))
 	}
 }
  // how do we test it
