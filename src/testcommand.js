@@ -12,6 +12,9 @@ module.exports = {
             config[args[1]] = args[2]
             util.apis["ccm-ccm"].api.save("ccm")
         }
+        if (args[0] == "what") {
+            message.channel.send(JSON.stringify(config))
+        }
     }
 } //that should be it.
 // woo
