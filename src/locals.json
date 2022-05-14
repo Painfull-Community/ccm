@@ -1,6 +1,8 @@
 {
     "moduleName": "ccm",
     "locals": {
-        "usage": "you need arguments dipshit fartface"
+        "en": {
+            "usage": "you need arguments dipshit fartface"
+        }
     }
 }
