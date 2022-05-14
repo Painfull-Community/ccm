@@ -5,8 +5,8 @@ let config = {}
 let botConfig = {}
 require("dotenv").config();
 let remoteMode = false
-if (process.env.MONGO_HOST) remoteMode = true
-/*mongoose.connect(process.env.MONGO_HOST);
+/*if (process.env.MONGO_HOST) remoteMode = true
+mongoose.connect(process.env.MONGO_HOST);
 
 const db = mongoose.connection;
 db.on('error', (err) => {
@@ -30,8 +30,7 @@ function initAPIs(util) {
 	let localConfig
 	if (!remoteMode) {
 		if (!fs.existsSync(`${__dirname}/ccm.json`)) fs.writeFileSync(`${__dirname}/ccm.json`, "{}")
-		localConfig = fs.readFileSync(`${__dirname}/ccm.json`) 
-		console.log("c: " + JSON.stringify(localConfig))
+		localConfig = JSON.parse(fs.readFileSync(`${__dirname}/ccm.json`).toString())
 	}
 
 	botConfig.enabledModules.forEach(module => {
@@ -49,17 +48,11 @@ function initAPIs(util) {
 
 function save(moduleName) {
 	if (!remoteMode) {
-		let localConfig = fs.readFileSync(`${__dirname}/ccm.json`) 
+		let localConfig = JSON.parse(fs.readFileSync(`${__dirname}/ccm.json`).toString())
 		localConfig[moduleName] = config[moduleName]
 		fs.writeFileSync(`${__dirname}/ccm.json`, JSON.stringify(localConfig, null, 4))
 	}
 }
- // how do we test it
- // hmm
- // maybe we can test it with a test bot
- // brand new idea
- // and this module can contain
- // a test command
 module.exports = {
 	api: {save},
 	config,
