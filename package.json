@@ -1,0 +1,21 @@
+{
+  "name": "shark-db",
+  "version": "1.0.0",
+  "description": "databasing for sharkofbot painfull edition",
+  "main": "src/index.js",
+  "original_pain_version": "1.0.0",
+  "min_pain_version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharkpain/shark-db.git"
+  },
+  "author": "Skelly",
+  "license": "UNLICENCED",
+  "bugs": {
+    "url": "https://github.com/sharkpain/shark-db/issues"
+  },
+  "dependencies": {
+    "mongoose": "^6.2.4",
+    "dotenv": "^16.0.0"
+  }
+}

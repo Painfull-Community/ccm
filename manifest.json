@@ -1,0 +1,14 @@
+{
+    "name": "shark-db",
+    "version": "1.0.0",
+    "author": "Skelly",
+    "original_pain_version": "1.0.0",
+    "min_pain_version": "1.0.0",
+    "apis": {
+        "db": "src/index.js"
+    },
+    "entrypoints": {
+        "thiscommanddoesntexist": "src/no.js"
+    },
+    "eventHandlers": ["messageCreate"]
+}
