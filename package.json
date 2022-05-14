@@ -1,18 +1,16 @@
 {
-  "name": "shark-db",
+  "name": "ccm",
   "version": "1.0.0",
-  "description": "databasing for sharkofbot painfull edition",
+  "description": "Central Configuration Manager for the Painfull framework",
   "main": "src/index.js",
-  "original_pain_version": "1.0.0",
-  "min_pain_version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sharkpain/shark-db.git"
+    "url": "git+https://github.com/Painfull-Community/central-config-manager.git"
   },
-  "author": "Skelly",
+  "author": "LIT Devs",
   "license": "UNLICENCED",
   "bugs": {
-    "url": "https://github.com/sharkpain/shark-db/issues"
+    "url": "https://github.com/Painfull-Community/central-config-manager/issues"
   },
   "dependencies": {
     "mongoose": "^6.2.4",
