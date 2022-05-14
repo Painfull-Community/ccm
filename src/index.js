@@ -37,7 +37,11 @@ function initAPIs(util) {
 		if (!remoteMode) {
 			if (localConfig[module]) {
 				config[module] = localConfig[module]
-			} // :nikopensive:
+			} else {
+				config[module] = {}
+				localConfig[module] = {}
+				fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(localConfig, null, 4))
+			}
 		}
 	})
 }
@@ -49,12 +53,6 @@ function save(moduleName) {
 		fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(localConfig, null, 4))
 	}
 }
-
-// a module would do util.apis["central-config-manager-ccm"].config["moduleName"].piss = poop" 
-// can the github repo and module have a different name? central config manager is suuuper long
-
-// i THINK so but do not take my word for that
-// the name has to be the same
 
 module.exports = {
 	api: {initAPIs, save},
